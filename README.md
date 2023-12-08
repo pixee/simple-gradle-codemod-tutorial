@@ -14,21 +14,29 @@ The newer methods in `java.nio.file.Files` replaced the need for some of communi
 + List<String> lines = Files.readAllLines(file.toPath());
 ```
 
-# Building & Testing
+# Testing
 
 ```bash
-$ ./gradlew assemble
+$ ./gradlew check
+```
+
+# Building
+
+```bash
+$ ./gradlew distZip
 ```
 
 # Running
 
-If you have some sample code you want to run this on:
-```bash
-$ ./gradle distZip
+After building, you can run the distribution packaged in the `distZip` task.
 
+```bash
+$ cd app/build/distributions/
+$ unzip app.zip
+ 
 # do it without making the actual code changes on disk
-$ sh build/distributions/nio-modernizer/nio-modernizer.sh --dry-run /my-project
+$ app/bin/app --dry-run /my-project
 
 # do it and make the actual code changes
-$ sh build/distributions/nio-modernizer/nio-modernizer.sh /my-project
+$ app/bin/app /my-project
 ```
