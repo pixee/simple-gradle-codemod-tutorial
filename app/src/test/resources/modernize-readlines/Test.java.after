@@ -1,0 +1,10 @@
+package com.acme;
+
+import java.io.File;
+import java.nio.file.Files;
+class Test {
+    public void foo(File file) {
+       List<String> s = Files.readAllLines(file.toPath());
+       System.out.println(s);
+    }
+}

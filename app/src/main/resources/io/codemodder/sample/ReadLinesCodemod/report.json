@@ -1,0 +1,7 @@
+{
+  "summary": "Modernize Apache Commons IO Files API to Java NIO",
+  "change": "Modernized Apache Commons IO Files#readLines() to use Java NIO Files#readAllLines()",
+  "references": [
+    "https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#readAllLines-java.nio.file.Path-"
+  ]
+}

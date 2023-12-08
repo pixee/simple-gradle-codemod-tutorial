@@ -1,0 +1,11 @@
+package com.acme;
+
+import java.io.File;
+import org.apache.commons.io.FileUtils;
+
+class Test {
+    public void foo(File file) {
+       List<String> s = FileUtils.readLines(file);
+       System.out.println(s);
+    }
+}
