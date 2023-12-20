@@ -8,9 +8,6 @@ import io.codemodder.Runner;
 import java.util.List;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
         // invoke the codemod runner
