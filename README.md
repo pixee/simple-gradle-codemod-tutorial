@@ -1,6 +1,6 @@
 # Sample Codemod
 
-This page holds a Gradle codemod project discussed in the [codemodder.io tutorial](http://localhost:3000/languages/java/fork_sample).
+This page holds an example Codemodder codemod, built with Gradle, as discussed in the [codemodder.io tutorial](http://codemodder.io/languages/java/fork_sample).
 
 The newer methods in `java.nio.file.Files` replaced the need for some of community-loved APIs in `org.apache.commons.io.FileUtils`. and this project demonstrates creating a codemod to move `org.apache.commons.io.FileUtils#readLines()` to `java.nio.file.Files.readAllLines()`. The codemod should make changes like this:
 
