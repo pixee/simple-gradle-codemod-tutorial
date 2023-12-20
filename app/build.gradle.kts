@@ -12,7 +12,9 @@ dependencies {
     implementation("io.codemodder:codemodder-plugin-semgrep:0.69.2")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("io.codemodder:codemodder-testutils:0.69.2")
+
 }
 
 java {
