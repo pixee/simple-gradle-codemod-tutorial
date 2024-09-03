@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    val codemodderVersion = "0.69.2"
+    val codemodderVersion = "0.94.0"
     implementation("com.google.guava:guava:31.1-jre")
     implementation("io.codemodder:codemodder-base:$codemodderVersion")
     implementation("io.codemodder:codemodder-plugin-semgrep:$codemodderVersion")
