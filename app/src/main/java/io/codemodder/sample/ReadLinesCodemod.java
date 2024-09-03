@@ -6,6 +6,7 @@ import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 import io.codemodder.*;
+import io.codemodder.javaparser.ChangesResult;
 import io.codemodder.providers.sarif.semgrep.SemgrepScan;
 
 import javax.inject.Inject;
@@ -15,6 +16,7 @@ import static io.codemodder.javaparser.JavaParserTransformer.replace;
 
 @Codemod(
         id = "pixee:java/migrate-files-commons-io-to-nio",
+        importance = Importance.LOW,
         reviewGuidance = ReviewGuidance.MERGE_WITHOUT_REVIEW)
 public final class ReadLinesCodemod extends SarifPluginJavaParserChanger<MethodCallExpr> {
     private static final String RULE =
@@ -38,7 +40,7 @@ public final class ReadLinesCodemod extends SarifPluginJavaParserChanger<MethodC
     }
 
     @Override
-    public boolean onResultFound(
+    public ChangesResult onResultFound(
             CodemodInvocationContext context, // some context, like the file path, configuration, etc.
             CompilationUnit cu, // the JavaParser model of this source file source
             MethodCallExpr apacheReadLinesCall, // the method call AST node that was found by Semgrep in our query
@@ -53,7 +55,8 @@ public final class ReadLinesCodemod extends SarifPluginJavaParserChanger<MethodC
                         .withSameArguments();
         if (success) {
             removeImportIfUnused(cu, "org.apache.commons.io.FileUtils"); // won't remove if it's still needed
+            return ChangesResult.changesApplied; // this is a signal to the runner that we made a change
         }
-        return success; // should return true if a change was made, so it can be communicated to the user
+        return ChangesResult.noChanges; // this is a signal to the runner that we didn't make a change
     }
 }

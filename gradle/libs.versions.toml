@@ -1,0 +1,9 @@
+[versions]
+codemodder = "0.94.0"
+
+[libraries]
+codemodder-base = { group = "io.codemodder", name = "codemodder-base", version.ref = "codemodder" }
+codemodder-plugin-semgrep = { group = "io.codemodder", name = "codemodder-plugin-semgrep", version.ref = "codemodder" }
+codemodder-testutils = { group = "io.codemodder", name = "codemodder-testutils", version.ref = "codemodder" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version = "5.10.1" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "1.8.2" }

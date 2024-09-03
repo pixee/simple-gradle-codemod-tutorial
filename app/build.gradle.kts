@@ -7,15 +7,12 @@ repositories {
 }
 
 dependencies {
-    val codemodderVersion = "0.69.2"
-    implementation("com.google.guava:guava:31.1-jre")
-    implementation("io.codemodder:codemodder-base:$codemodderVersion")
-    implementation("io.codemodder:codemodder-plugin-semgrep:$codemodderVersion")
+    implementation(libs.codemodder.base)
+    implementation(libs.codemodder.plugin.semgrep)
 
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    testImplementation("io.codemodder:codemodder-testutils:$codemodderVersion")
-
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.codemodder.testutils)
+    testRuntimeOnly(libs.junit.platform.launcher)
 }
 
 java {
@@ -28,6 +25,6 @@ application {
     mainClass.set("io.codemodder.sample.App")
 }
 
-tasks.named<Test>("test") {
+tasks.test {
     useJUnitPlatform()
 }
