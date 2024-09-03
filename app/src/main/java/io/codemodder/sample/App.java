@@ -12,7 +12,7 @@ public class App {
     public static void main(String[] args) {
         // invoke the codemod runner
         Runner.run(
-            List.of(ReadLinesCodemod.class),
+            List.of(ReadLinesCodemod.class, AddDecoratorCodemod.class),
             args
         );
     }

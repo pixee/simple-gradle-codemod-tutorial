@@ -1,0 +1,7 @@
+{
+  "summary": "Adds the @DoesSerialization annotation to serializable types",
+  "change": "Adds the missing annotation",
+  "references": [
+    "https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"
+  ]
+}
