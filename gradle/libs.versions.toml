@@ -1,5 +1,5 @@
 [versions]
-codemodder = "0.94.0"
+codemodder = "0.97.0"
 
 [libraries]
 codemodder-base = { group = "io.codemodder", name = "codemodder-base", version.ref = "codemodder" }
